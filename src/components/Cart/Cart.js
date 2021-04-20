@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './Cart.css';
 
 const Cart = (props) => {
@@ -36,7 +37,11 @@ const Cart = (props) => {
             <p>Product Price: {formatNumber(total)} </p>
             <p>Shipping cost: {formatNumber(shipping)} </p>
             <p> <small>tax+vat:{formatNumber(tax)}</small></p>
-            <p>Total Price: { formatNumber(total + shipping + tax) } </p>
+            <p>Grand Total: { formatNumber(total + shipping + tax) } </p>
+            <br/>
+            {
+                props.children
+            }
         </div>
     );
 };
